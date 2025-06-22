@@ -8,7 +8,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     ConfigModule.forRoot({
       envFilePath: ['.env.development.local'],
-      isGlobal: true,
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -24,10 +23,3 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   providers: [],
 })
 export class AppModule { }
-console.log({
-  DB_HOST: process.env.DB_HOST,
-  DB_PORT: process.env.DB_PORT,
-  DB_USERNAME: process.env.DB_USERNAME,
-  DB_PASSWORD: process.env.DB_PASSWORD,
-  DB_DATABASE: process.env.DB_DATABASE,
-});
